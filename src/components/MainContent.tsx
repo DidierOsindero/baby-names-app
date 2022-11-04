@@ -26,7 +26,7 @@ export const MainContent = (): JSX.Element => {
           onChange={(event) => setSearchText(event.target.value)}
         />
       </div>
-      <div>
+      <div className="babyNamesListWrapper">
         <BabyNames
           babyNameArray={babyNameArray}
           currentSearchText={searchText}

@@ -1,9 +1,6 @@
 /*
 App
 */
-.App {
-  border: 0.5px groove rgb(204, 204, 211);
-}
 
 button {
   text-align: center;
@@ -14,14 +11,23 @@ button {
 }
 
 /*
+MainContent
+*/
+.babyNamesListWrapper {
+  border: 2px solid lightblue;
+  border-radius: 15px;
+  padding: 0px;
+  margin: 20px 200px;
+  min-height: 300px;
+}
+
+/*
 BabyNames (List)
 */
 
 .nameList {
-  margin: 2% 20%;
+  margin: 2%;
   padding: 0px;
-  border: 2px solid lightblue;
-  border-radius: 10px;
   text-align: center;
 }
 
@@ -39,7 +45,7 @@ SearchBarWrapper and SearchBar
 }
 
 .searchBar {
-  background-color: rgb(255, 226, 231);
+  background-color: white;
   border-radius: 20px;
 }
 
