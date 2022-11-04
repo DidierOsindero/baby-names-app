@@ -1,5 +1,9 @@
 import { BabyName } from "./BabyName";
 
 export const BabyNames = (): JSX.Element => {
-    return (<></>);
+    return (
+        <>
+            <BabyName id={1} name="Jane" sex="m"/>
+        </>
+    );
 }

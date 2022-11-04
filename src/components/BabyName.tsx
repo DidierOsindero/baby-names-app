@@ -6,5 +6,9 @@ interface BabyNameProps {
 
 
 export const BabyName = ({id, name, sex}: BabyNameProps): JSX.Element => {
-    return (<></>);
+    return (
+    <>
+        <h1>My Baby Name is {name}</h1>
+    </>
+    );
 }
