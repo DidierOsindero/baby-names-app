@@ -1,0 +1,44 @@
+/*
+App
+*/
+.App {
+  border: 0.5px groove rgb(204, 204, 211);
+}
+
+button {
+  text-align: center;
+  border: 2px outset white;
+  padding: 10px;
+  color: white;
+  border-radius: 10px;
+}
+
+/*
+BabyNames (List)
+*/
+
+.nameList {
+  margin: 2% 20%;
+  padding: 0px;
+  border: 2px solid lightblue;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.nameList > li {
+  display: inline-block;
+}
+/*
+BabyName (Button and surrounding div)
+*/
+.BabyName {
+  margin: 2px;
+}
+
+.boyNameButton {
+  background-color: lightblue;
+}
+
+.girlNameButton {
+  background-color: lightpink;
+}
