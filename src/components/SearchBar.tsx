@@ -5,7 +5,7 @@ export const SearchBar = (): JSX.Element => {
 
     return (
     <div className="searchBarWrapper">
-        <input value={searchDisplay} onChange={event => setSearchDisplay(event.target.value)}/>
+        <input className="searchBar" value={searchDisplay} onChange={event => setSearchDisplay(event.target.value)} />
     </div>
     );
 }

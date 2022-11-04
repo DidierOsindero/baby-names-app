@@ -28,6 +28,21 @@ BabyNames (List)
 .nameList > li {
   display: inline-block;
 }
+
+/*
+SearchBarWrapper and SearchBar
+*/
+
+.searchBarWrapper {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.searchBar {
+    background-color: rgb(255, 226, 231);
+    border-radius: 20px;
+}
+
 /*
 BabyName (Button and surrounding div)
 */
