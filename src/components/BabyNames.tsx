@@ -11,7 +11,6 @@ interface nameDataProps {
 }
 //props.jsonFile[index] => gives you specific name object
 export const BabyNames = ({ babyNameArray }: BabyNamesProps): JSX.Element => {
-
   return (
     <ul className="nameList">
       {babyNameArray.map((element) => {

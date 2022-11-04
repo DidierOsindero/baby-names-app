@@ -34,13 +34,13 @@ SearchBarWrapper and SearchBar
 */
 
 .searchBarWrapper {
-    text-align: center;
-    margin-top: 20px;
+  text-align: center;
+  margin-top: 20px;
 }
 
 .searchBar {
-    background-color: rgb(255, 226, 231);
-    border-radius: 20px;
+  background-color: rgb(255, 226, 231);
+  border-radius: 20px;
 }
 
 /*
@@ -55,23 +55,23 @@ BabyName (Button and surrounding div)
 }
 
 .boyNameButton:active {
-    background-color: #025497;
-    color: white;
-  }
+  background-color: #025497;
+  color: white;
+}
 
-  .boyNameButton:hover {
-    color: rgb(37, 194, 247)
-  }
+.boyNameButton:hover {
+  color: rgb(37, 194, 247);
+}
 
 .girlNameButton {
   background-color: lightpink;
 }
 
 .girlNameButton:active {
-    background-color: #f72da3;
-    color: white;
-  }
+  background-color: #f72da3;
+  color: white;
+}
 
-  .girlNameButton:hover {
-    color: rgb(253, 125, 147)
-  }
+.girlNameButton:hover {
+  color: rgb(253, 125, 147);
+}
