@@ -2,6 +2,7 @@ import { BabyName } from "./BabyName";
 
 interface BabyNamesProps {
   babyNameArray: nameDataProps[];
+  currentSearchText: string;
 }
 
 interface nameDataProps {
@@ -9,16 +10,26 @@ interface nameDataProps {
   name: string;
   sex: string;
 }
-//props.jsonFile[index] => gives you specific name object
-export const BabyNames = ({ babyNameArray }: BabyNamesProps): JSX.Element => {
+
+export const BabyNames = ({
+  babyNameArray,
+  currentSearchText,
+}: BabyNamesProps): JSX.Element => {
   return (
     <ul className="nameList">
       {babyNameArray.map((element) => {
-        return (
-          <li key={element.id}>
-            <BabyName id={element.id} name={element.name} sex={element.sex} />
-          </li>
-        );
+        if (
+          element.name
+            .toLowerCase()
+            .includes(currentSearchText.toLocaleLowerCase())
+        ) {
+          return (
+            <li key={element.id}>
+              <BabyName id={element.id} name={element.name} sex={element.sex} />
+            </li>
+          );
+        }
+        return null;
       })}
     </ul>
   );

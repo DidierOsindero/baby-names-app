@@ -1,4 +1,3 @@
-
 import babyNamesData from "../babyNamesData.json";
 import { BabyNames } from "./BabyNames";
 import { useState } from "react";
@@ -28,7 +27,10 @@ export const MainContent = (): JSX.Element => {
         />
       </div>
       <div>
-        <BabyNames babyNameArray={babyNameArray} />
+        <BabyNames
+          babyNameArray={babyNameArray}
+          currentSearchText={searchText}
+        />
       </div>
     </>
   );
