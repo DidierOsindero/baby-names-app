@@ -11,12 +11,29 @@ button {
     padding: 10px;
     color: white;
     margin: 4px 5px; 
-    border-radius: 10px;   
+    border-radius: 10px;
 }
 
 /*
-BabyName
+BabyNames (List)
 */
+
+.nameList {
+    margin: 20px 300px;
+    border: 2px dotted red;
+    text-align: center;
+}
+
+.nameList > li {
+    display: inline-block;
+}
+/*
+BabyName (Button and surrounding div)
+*/
+.BabyName {
+    
+}
+
 .boyNameButton {
     
     background-color: lightblue

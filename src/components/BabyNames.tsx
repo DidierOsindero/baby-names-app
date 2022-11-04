@@ -12,18 +12,18 @@ interface nameDataProps {
 //props.jsonFile[index] => gives you specific name object
 export const BabyNames = ({babyNameArray}: BabyNamesProps): JSX.Element => {
     return (
-        <>
-            <BabyName id={1} name="Jane" sex="f"/>
+        <ul className="nameList">
             {babyNameArray.map(element => {
                 return (
+                    <li key={element.id}>
                     <BabyName 
                         id={element.id} 
                         name={element.name}
                         sex={element.sex}
-                        key={element.id}
                     />
+                    </li>
                 )
             })}
-        </>
+        </ul>
     );
 }
