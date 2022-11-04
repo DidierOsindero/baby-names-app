@@ -10,7 +10,6 @@ button {
     border: 2px outset white;
     padding: 10px;
     color: white;
-    margin: 4px 5px; 
     border-radius: 10px;
 }
 
@@ -19,8 +18,10 @@ BabyNames (List)
 */
 
 .nameList {
-    margin: 20px 300px;
-    border: 2px dotted red;
+    margin: 2% 20%;
+    padding: 0px;
+    border: 2px solid lightblue;
+    border-radius: 10px;
     text-align: center;
 }
 
@@ -31,7 +32,7 @@ BabyNames (List)
 BabyName (Button and surrounding div)
 */
 .BabyName {
-    
+    margin: 2px;
 }
 
 .boyNameButton {
