@@ -3,9 +3,9 @@ import "./App.css";
 
 function App(): JSX.Element {
   return (
-  <div className="App">
-  <MainContent />
-  </div>
+    <div className="App">
+      <MainContent />
+    </div>
   );
 }
 
