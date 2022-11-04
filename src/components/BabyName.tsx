@@ -8,7 +8,8 @@ interface BabyNameProps {
 export const BabyName = ({id, name, sex}: BabyNameProps): JSX.Element => {
     return (
     <>
-        <h1>My Baby Name is {name}</h1>
+        {sex === "m" && <button className="boyNameButton">Tom</button>}
+        {sex === "f" && <button className="girlNameButton">Sarah</button>}
     </>
     );
 }
