@@ -5,16 +5,25 @@ App
     border: 0.5px groove rgb(204, 204, 211)
 }
 
+button {
+    text-align: center;
+    border: 2px outset white;
+    padding: 10px;
+    color: white;
+    margin: 4px 5px; 
+    border-radius: 10px;   
+}
+
 /*
 BabyName
 */
 .boyNameButton {
     
-    background-color: red
+    background-color: lightblue
 }
 
 .girlNameButton {
-    background-color: pink
+    background-color: lightpink
 }
 
 
