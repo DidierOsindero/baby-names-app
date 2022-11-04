@@ -1,8 +1,9 @@
 import { BabyNames } from "./BabyNames";
+import { SearchBar } from "./SearchBar";
 import babyNamesData from "../babyNamesData.json";
 
 export const MainContent = (): JSX.Element => {
-    
+
     const sortedBabyNameArray = babyNamesData.sort((a, b) => {
         const name1 = a.name;
         const name2 = b.name;
@@ -18,7 +19,8 @@ export const MainContent = (): JSX.Element => {
 
   return (
     <>
-      <BabyNames babyNameArray={sortedBabyNameArray} />
+        <SearchBar />
+        <BabyNames babyNameArray={sortedBabyNameArray} />
     </>
   );
 };
