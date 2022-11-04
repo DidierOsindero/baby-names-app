@@ -47,7 +47,9 @@ SearchBarWrapper and SearchBar
 .searchBar {
   background-color: white;
   border-radius: 20px;
+  border: 2px solid lightpink;
 }
+
 
 /*
 BabyName (Button and surrounding div)
