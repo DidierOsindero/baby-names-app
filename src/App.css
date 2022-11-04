@@ -39,6 +39,24 @@ BabyName (Button and surrounding div)
   background-color: lightblue;
 }
 
+.boyNameButton:active {
+    background-color: #025497;
+    color: white;
+  }
+
+  .boyNameButton:hover {
+    color: rgb(37, 194, 247)
+  }
+
 .girlNameButton {
   background-color: lightpink;
 }
+
+.girlNameButton:active {
+    background-color: #f72da3;
+    color: white;
+  }
+
+  .girlNameButton:hover {
+    color: rgb(253, 125, 147)
+  }
