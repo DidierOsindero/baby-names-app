@@ -1,10 +1,26 @@
 /*
-BabyName
+App
 */
-
 .App {
     border: 0.5px groove rgb(204, 204, 211)
 }
+
+/*
+BabyName
+*/
+.boyNameButton {
+    
+    background-color: red
+}
+
+.girlNameButton {
+    background-color: pink
+}
+
+
+
+
+
 
 
 
