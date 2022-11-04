@@ -1,7 +1,7 @@
 import { BabyName } from "./BabyName";
 
 interface BabyNamesProps {
-    jsonFile: nameDataProps[]
+    babyNameArray: nameDataProps[]
 }
 
 interface nameDataProps {
@@ -10,11 +10,20 @@ interface nameDataProps {
     sex: string
 }
 //props.jsonFile[index] => gives you specific name object
-export const BabyNames = (props: BabyNamesProps): JSX.Element => {
+export const BabyNames = ({babyNameArray}: BabyNamesProps): JSX.Element => {
     return (
         <>
             <BabyName id={1} name="Jane" sex="f"/>
-            <p>{props.jsonFile[50].name}</p>
+            {babyNameArray.map(element => {
+                return (
+                    <BabyName 
+                        id={element.id} 
+                        name={element.name}
+                        sex={element.sex}
+                        key={element.id}
+                    />
+                )
+            })}
         </>
     );
 }

@@ -4,7 +4,7 @@ import babyNamesData from "../babyNamesData.json";
 export const MainContent = (): JSX.Element => {
     return (
         <>
-        <BabyNames jsonFile={babyNamesData}/>
+        <BabyNames babyNameArray={babyNamesData}/>
         </>
     );
 }
