@@ -1,9 +1,10 @@
 import { BabyNames } from "./BabyNames"; 
+import babyNamesData from "../babyNamesData.json"; 
 
 export const MainContent = (): JSX.Element => {
     return (
         <>
-        <BabyNames />
+        <BabyNames jsonFile={babyNamesData}/>
         </>
     );
 }
