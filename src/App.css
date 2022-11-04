@@ -1,9 +1,6 @@
 /*
 App
 */
-.App {
-  border: 0.5px groove rgb(204, 204, 211);
-}
 
 button {
   text-align: center;
@@ -14,20 +11,45 @@ button {
 }
 
 /*
+MainContent
+*/
+.babyNamesListWrapper {
+  border: 2px solid lightblue;
+  border-radius: 15px;
+  padding: 0px;
+  margin: 20px 200px;
+  min-height: 300px;
+}
+
+/*
 BabyNames (List)
 */
 
 .nameList {
-  margin: 2% 20%;
+  margin: 2%;
   padding: 0px;
-  border: 2px solid lightblue;
-  border-radius: 10px;
   text-align: center;
 }
 
 .nameList > li {
   display: inline-block;
 }
+
+/*
+SearchBarWrapper and SearchBar
+*/
+
+.searchBarWrapper {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.searchBar {
+  background-color: white;
+  border-radius: 20px;
+  border: 2px solid lightpink;
+}
+
 /*
 BabyName (Button and surrounding div)
 */
@@ -39,6 +61,24 @@ BabyName (Button and surrounding div)
   background-color: lightblue;
 }
 
+.boyNameButton:active {
+  background-color: #025497;
+  color: white;
+}
+
+.boyNameButton:hover {
+  color: rgb(37, 194, 247);
+}
+
 .girlNameButton {
   background-color: lightpink;
+}
+
+.girlNameButton:active {
+  background-color: #f72da3;
+  color: white;
+}
+
+.girlNameButton:hover {
+  color: rgb(253, 125, 147);
 }
