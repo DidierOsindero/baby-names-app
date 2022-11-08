@@ -11,7 +11,7 @@ export interface BabyNameProps {
 
 export const BabyName = ({ id, name, sex, favouritesList, setFavouritesList }: BabyNameProps): JSX.Element => {
   const handleNameButtonClick = () => {
-    setFavouritesList([{id:id, name:name, sex:sex},...favouritesList]) //add name that was clicked from babynames data
+    setFavouritesList([...favouritesList,{id:id, name:name, sex:sex}]) //add name that was clicked from babynames data
     }
 
   return (

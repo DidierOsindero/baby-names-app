@@ -21,6 +21,12 @@ MainContent
   min-height: 300px;
 }
 
+.favouritesListWrapper > li {
+
+    display: inline-block;
+
+}
+
 /*
 BabyNames (List)
 */
