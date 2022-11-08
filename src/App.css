@@ -59,6 +59,45 @@ SearchBarWrapper and SearchBar
   border: 2px solid lightpink;
 }
 
+.allButton {
+  background-color: lavender;
+  color: white;
+}
+
+.allButton:active {
+  background-color: lightcyan;
+}
+
+.allButton:hover {
+  color: purple;
+}
+
+.girlOnlyButton {
+    background-color: lightpink;
+}
+
+.girlOnlyButton:active {
+  background-color: #f72da3;
+    color: white;
+}
+
+.girlOnlyButton:hover {
+  color: rgb(253, 125, 147);
+}
+
+.boyOnlyButton {
+  background-color: lightblue;
+}
+
+.boyOnlyButton:active {
+  background-color: #025497;
+  color: white;
+}
+
+.boyOnlyButton:hover {
+  color: rgb(37, 194, 247);
+}
+
 /*
 BabyName (Button and surrounding div)
 */

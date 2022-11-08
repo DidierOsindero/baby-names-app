@@ -7,7 +7,11 @@ import { BabyNames } from "./BabyNames";
 export const MainContent = (): JSX.Element => {
   const [searchText, setSearchText] = useState("");
   const [favouritesList, setFavouritesList] = useState<NameData[]>([]);
-  const [clickedButton, setClickedButton] = useState<NameData>()
+  const [clickedButton, setClickedButton] = useState<NameData>();
+
+  const [allButton, setAllButton] = useState<boolean>(true);
+  const [girlOnlyButton, setGirlOnlyButton] = useState<boolean>(false);
+  const [boyOnlyButton, setBoyOnlyButton] = useState<boolean>(false);
 
   //Sort baby names array into alphabetical order
   const babyNameArray = babyNamesData.sort((a, b) => {
@@ -31,6 +35,9 @@ export const MainContent = (): JSX.Element => {
           value={searchText}
           onChange={(event) => setSearchText(event.target.value)}
         />
+        <button className="allButton">all</button>
+        <button className="girlOnlyButton">girls</button>
+        <button className="boyOnlyButton">boys</button>
       </div>
       <div className="favouritesListWrapper">
         <div className="favouritesTextWrapper">
