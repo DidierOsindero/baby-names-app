@@ -13,6 +13,24 @@ export const MainContent = (): JSX.Element => {
   const [girlOnlyButton, setGirlOnlyButton] = useState<boolean>(false);
   const [boyOnlyButton, setBoyOnlyButton] = useState<boolean>(false);
 
+  const handleAllFilter = () => {
+    setAllButton(true);
+    setBoyOnlyButton(false);
+    setGirlOnlyButton(false);
+  }
+
+  const handleBoyOnlyFilter = () => {
+    setAllButton(false);
+    setBoyOnlyButton(true);
+    setGirlOnlyButton(false);
+  }
+
+  const handleGirlOnlyFilter = () => {
+    setAllButton(false);
+    setBoyOnlyButton(false);
+    setGirlOnlyButton(true);
+  }
+
   //Sort baby names array into alphabetical order
   const babyNameArray = babyNamesData.sort((a, b) => {
     const name1 = a.name;
@@ -35,9 +53,9 @@ export const MainContent = (): JSX.Element => {
           value={searchText}
           onChange={(event) => setSearchText(event.target.value)}
         />
-        <button className="allButton">all</button>
-        <button className="girlOnlyButton">girls</button>
-        <button className="boyOnlyButton">boys</button>
+        <button className="allButton" onClick={handleAllFilter}>all</button>
+        <button className="girlOnlyButton" onClick={handleGirlOnlyFilter}>girls</button>
+        <button className="boyOnlyButton" onClick={handleBoyOnlyFilter}>boys</button>
       </div>
       <div className="favouritesListWrapper">
         <div className="favouritesTextWrapper">
@@ -68,6 +86,9 @@ export const MainContent = (): JSX.Element => {
           setFavouritesList={setFavouritesList}
           clickedButton={clickedButton}
           setClickedButton={setClickedButton}
+          isGirlsOnly={girlOnlyButton}
+          isBoysOnly={boyOnlyButton}
+          isAll={allButton}
         />
       </div>
     </>
