@@ -20,16 +20,18 @@ export const BabyName = ({
   setClickedButton
 }: BabyNameProps): JSX.Element => {
   const handleNameButtonClick = () => {
+    const currentButton = { id: id, name: name, sex: sex }
     //creating a condition to check if button is already in favourites list
     if (
       favouritesList.findIndex(
         (el) =>
           JSON.stringify(el) ===
-          JSON.stringify({ id: id, name: name, sex: sex })
+          JSON.stringify(currentButton)
       ) === -1
     ) {
       setFavouritesList([...favouritesList, { id: id, name: name, sex: sex }]); //add name that was clicked from babynames data
-    }
+    } 
+    setClickedButton(currentButton)
   };
 
   return (

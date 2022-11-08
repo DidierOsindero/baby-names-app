@@ -30,7 +30,10 @@ export const BabyNames = ({
           .filter((element) =>
             element.name
               .toLowerCase()
-              .includes(currentSearchText.toLocaleLowerCase())
+              .includes(currentSearchText.toLocaleLowerCase()) && 
+              favouritesList.findIndex(item => JSON.stringify(item) === JSON.stringify(element)) === -1
+              //if this returns a number >= 0 then that element is in favourites
+              //filter out items which are in the favourites list - must pass condition NOT IN FAVOURITES LIST
           )
           .map((element) => {
             return (
