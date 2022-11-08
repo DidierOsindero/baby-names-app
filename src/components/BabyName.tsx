@@ -30,7 +30,9 @@ export const BabyName = ({
       ) === -1
     ) {
       setFavouritesList([...favouritesList, { id: id, name: name, sex: sex }]); //add name that was clicked from babynames data
-    } 
+    } else {
+      setFavouritesList(favouritesList.filter(el => JSON.stringify(el) !== JSON.stringify(currentButton)));
+    }
     setClickedButton(currentButton)
   };
 
