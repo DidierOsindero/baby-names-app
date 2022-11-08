@@ -3,6 +3,7 @@ import { BabyName } from "./BabyName";
 interface BabyNamesProps {
   babyNameArray: nameDataProps[];
   currentSearchText: string;
+  handleNameButtonClick: () => void;
 }
 
 interface nameDataProps {
@@ -14,6 +15,7 @@ interface nameDataProps {
 export const BabyNames = ({
   babyNameArray,
   currentSearchText,
+  handleNameButtonClick
 }: BabyNamesProps): JSX.Element => {
   return (
     <>
@@ -31,6 +33,7 @@ export const BabyNames = ({
                   id={element.id}
                   name={element.name}
                   sex={element.sex}
+                  handleNameButtonClick={handleNameButtonClick}
                 />
               </li>
             );
