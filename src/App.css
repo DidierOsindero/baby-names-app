@@ -26,6 +26,8 @@ MainContent
 }
 
 .favouritesTextWrapper {
+  padding-bottom: 10px;
+  font-size: 30px;
   color: gray;
   text-align: center;
 }
