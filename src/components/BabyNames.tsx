@@ -4,7 +4,7 @@ interface BabyNamesProps {
   babyNameArray: NameData[];
   currentSearchText: string;
   favouritesList: NameData[];
-  setFavouritesList: (updatedArray:NameData[]|[]) => void;
+  setFavouritesList: (updatedArray: NameData[] | []) => void;
 }
 
 export interface NameData {
@@ -17,10 +17,8 @@ export const BabyNames = ({
   babyNameArray,
   currentSearchText,
   favouritesList,
-  setFavouritesList
+  setFavouritesList,
 }: BabyNamesProps): JSX.Element => {
-  
-
   return (
     <>
       <ul className="nameList">

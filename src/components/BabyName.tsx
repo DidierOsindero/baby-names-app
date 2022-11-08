@@ -5,19 +5,32 @@ export interface BabyNameProps {
   name: string;
   sex: string;
   favouritesList: NameData[];
-  setFavouritesList: (updatedArray:NameData[]|[]) => void;
+  setFavouritesList: (updatedArray: NameData[] | []) => void;
 }
 
-
-export const BabyName = ({ id, name, sex, favouritesList, setFavouritesList }: BabyNameProps): JSX.Element => {
+export const BabyName = ({
+  id,
+  name,
+  sex,
+  favouritesList,
+  setFavouritesList,
+}: BabyNameProps): JSX.Element => {
   const handleNameButtonClick = () => {
-    setFavouritesList([...favouritesList,{id:id, name:name, sex:sex}]) //add name that was clicked from babynames data
-    }
+    setFavouritesList([...favouritesList, { id: id, name: name, sex: sex }]); //add name that was clicked from babynames data
+  };
 
   return (
     <div className="BabyName">
-      {sex === "m" && <button className="boyNameButton" onClick={handleNameButtonClick}>{name}</button>}
-      {sex === "f" && <button className="girlNameButton" onClick={handleNameButtonClick}>{name}</button>}
+      {sex === "m" && (
+        <button className="boyNameButton" onClick={handleNameButtonClick}>
+          {name}
+        </button>
+      )}
+      {sex === "f" && (
+        <button className="girlNameButton" onClick={handleNameButtonClick}>
+          {name}
+        </button>
+      )}
     </div>
   );
 };

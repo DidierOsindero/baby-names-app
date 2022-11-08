@@ -1,17 +1,16 @@
 import babyNamesData from "../babyNamesData.json";
-import { BabyNames } from "./BabyNames";
 import { useState } from "react";
 import { BabyName } from "./BabyName";
 import { NameData } from "./BabyNames";
+import { BabyNames } from "./BabyNames";
 
 
 
 export const MainContent = (): JSX.Element => {
+  const [searchText, setSearchText] = useState("");
+  const [favouritesList, setFavouritesList] = useState<NameData[]>([]);
 
-const [searchText, setSearchText] = useState("");
-const [favouritesList, setFavouritesList] = useState<NameData[]>([]);
-
-
+  //Sort baby names array into alphabetical order
   const babyNameArray = babyNamesData.sort((a, b) => {
     const name1 = a.name;
     const name2 = b.name;
@@ -35,11 +34,19 @@ const [favouritesList, setFavouritesList] = useState<NameData[]>([]);
         />
       </div>
       <div className="favouritesListWrapper">
+        <div className="favouritesTextWrapper">
+        <p>Favourites</p>
+        </div>
         {favouritesList.map((element) => {
           return (
             <li key={element.id}>
-              <BabyName id={element.id} name={element.name} sex={element.sex} favouritesList={favouritesList}
-  setFavouritesList={setFavouritesList} />
+              <BabyName
+                id={element.id}
+                name={element.name}
+                sex={element.sex}
+                favouritesList={favouritesList}
+                setFavouritesList={setFavouritesList}
+              />
             </li>
           );
         })}
@@ -50,7 +57,7 @@ const [favouritesList, setFavouritesList] = useState<NameData[]>([]);
           babyNameArray={babyNameArray}
           currentSearchText={searchText}
           favouritesList={favouritesList}
-  setFavouritesList={setFavouritesList}
+          setFavouritesList={setFavouritesList}
         />
       </div>
     </>

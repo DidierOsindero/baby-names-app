@@ -22,9 +22,12 @@ MainContent
 }
 
 .favouritesListWrapper > li {
+  display: inline-block;
+}
 
-    display: inline-block;
-
+.favouritesTextWrapper {
+  color: gray;
+  text-align: center;
 }
 
 /*
