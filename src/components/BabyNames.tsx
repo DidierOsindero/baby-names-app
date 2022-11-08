@@ -1,12 +1,13 @@
 import { BabyName } from "./BabyName";
 
 interface BabyNamesProps {
-  babyNameArray: nameDataProps[];
+  babyNameArray: NameData[];
   currentSearchText: string;
-  handleNameButtonClick: () => void;
+  favouritesList: NameData[];
+  setFavouritesList: (updatedArray:NameData[]|[]) => void;
 }
 
-interface nameDataProps {
+export interface NameData {
   id: number;
   name: string;
   sex: string;
@@ -15,8 +16,11 @@ interface nameDataProps {
 export const BabyNames = ({
   babyNameArray,
   currentSearchText,
-  handleNameButtonClick
+  favouritesList,
+  setFavouritesList
 }: BabyNamesProps): JSX.Element => {
+  
+
   return (
     <>
       <ul className="nameList">
@@ -33,7 +37,8 @@ export const BabyNames = ({
                   id={element.id}
                   name={element.name}
                   sex={element.sex}
-                  handleNameButtonClick={handleNameButtonClick}
+                  favouritesList={favouritesList}
+                  setFavouritesList={setFavouritesList}
                 />
               </li>
             );
