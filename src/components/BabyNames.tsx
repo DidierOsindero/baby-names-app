@@ -18,12 +18,13 @@ export const BabyNames = ({
   return (
     <>
       <ul className="nameList">
-        {babyNameArray.map((element) => {
-          if (
+        {babyNameArray
+          .filter((element) =>
             element.name
               .toLowerCase()
               .includes(currentSearchText.toLocaleLowerCase())
-          ) {
+          )
+          .map((element) => {
             return (
               <li key={element.id}>
                 <BabyName
@@ -33,9 +34,7 @@ export const BabyNames = ({
                 />
               </li>
             );
-          }
-          return null;
-        })}
+          })}
       </ul>
     </>
   );
