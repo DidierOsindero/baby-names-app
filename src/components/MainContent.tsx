@@ -4,11 +4,10 @@ import { BabyName } from "./BabyName";
 import { NameData } from "./BabyNames";
 import { BabyNames } from "./BabyNames";
 
-
-
 export const MainContent = (): JSX.Element => {
   const [searchText, setSearchText] = useState("");
   const [favouritesList, setFavouritesList] = useState<NameData[]>([]);
+  const [clickedButton, setClickedButton] = useState<NameData>()
 
   //Sort baby names array into alphabetical order
   const babyNameArray = babyNamesData.sort((a, b) => {
@@ -35,7 +34,7 @@ export const MainContent = (): JSX.Element => {
       </div>
       <div className="favouritesListWrapper">
         <div className="favouritesTextWrapper">
-        <p>Favourites</p>
+          <p>Favourites</p>
         </div>
         {favouritesList.map((element) => {
           return (
@@ -46,6 +45,8 @@ export const MainContent = (): JSX.Element => {
                 sex={element.sex}
                 favouritesList={favouritesList}
                 setFavouritesList={setFavouritesList}
+                clickedButton={clickedButton}
+                setClickedButton={setClickedButton}
               />
             </li>
           );
@@ -58,6 +59,8 @@ export const MainContent = (): JSX.Element => {
           currentSearchText={searchText}
           favouritesList={favouritesList}
           setFavouritesList={setFavouritesList}
+          clickedButton={clickedButton}
+          setClickedButton={setClickedButton}
         />
       </div>
     </>

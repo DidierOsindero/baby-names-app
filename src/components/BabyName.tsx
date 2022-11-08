@@ -6,6 +6,8 @@ export interface BabyNameProps {
   sex: string;
   favouritesList: NameData[];
   setFavouritesList: (updatedArray: NameData[] | []) => void;
+  clickedButton: NameData | undefined;
+  setClickedButton: (newButtonData: NameData) => void;
 }
 
 export const BabyName = ({
@@ -14,9 +16,20 @@ export const BabyName = ({
   sex,
   favouritesList,
   setFavouritesList,
+  clickedButton,
+  setClickedButton
 }: BabyNameProps): JSX.Element => {
   const handleNameButtonClick = () => {
-    setFavouritesList([...favouritesList, { id: id, name: name, sex: sex }]); //add name that was clicked from babynames data
+    //creating a condition to check if button is already in favourites list
+    if (
+      favouritesList.findIndex(
+        (el) =>
+          JSON.stringify(el) ===
+          JSON.stringify({ id: id, name: name, sex: sex })
+      ) === -1
+    ) {
+      setFavouritesList([...favouritesList, { id: id, name: name, sex: sex }]); //add name that was clicked from babynames data
+    }
   };
 
   return (
