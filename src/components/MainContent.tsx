@@ -9,26 +9,26 @@ export const MainContent = (): JSX.Element => {
   const [favouritesList, setFavouritesList] = useState<NameData[]>([]);
   const [clickedButton, setClickedButton] = useState<NameData>();
 
-  const [allButton, setAllButton] = useState<boolean>(true);
-  const [girlOnlyButton, setGirlOnlyButton] = useState<boolean>(false);
-  const [boyOnlyButton, setBoyOnlyButton] = useState<boolean>(false);
+  const [isAll, setisAll] = useState<boolean>(true);
+  const [isGirlsOnly, setisGirlsOnly] = useState<boolean>(false);
+  const [isBoysOnly, setisBoysOnly] = useState<boolean>(false);
 
   const handleAllFilter = () => {
-    setAllButton(true);
-    setBoyOnlyButton(false);
-    setGirlOnlyButton(false);
+    setisAll(true);
+    setisBoysOnly(false);
+    setisGirlsOnly(false);
   }
 
   const handleBoyOnlyFilter = () => {
-    setAllButton(false);
-    setBoyOnlyButton(true);
-    setGirlOnlyButton(false);
+    setisAll(false);
+    setisBoysOnly(true);
+    setisGirlsOnly(false);
   }
 
   const handleGirlOnlyFilter = () => {
-    setAllButton(false);
-    setBoyOnlyButton(false);
-    setGirlOnlyButton(true);
+    setisAll(false);
+    setisBoysOnly(false);
+    setisGirlsOnly(true);
   }
 
   //Sort baby names array into alphabetical order
@@ -47,19 +47,27 @@ export const MainContent = (): JSX.Element => {
 
   return (
     <>
+      <div className="titleWrapper">
+        <h1>Baby Name Picker</h1>
+      </div>
       <div className="searchBarWrapper">
         <input
           className="searchBar"
           value={searchText}
           onChange={(event) => setSearchText(event.target.value)}
         />
-        <button className="allButton" onClick={handleAllFilter}>all</button>
-        <button className="girlOnlyButton" onClick={handleGirlOnlyFilter}>girls</button>
-        <button className="boyOnlyButton" onClick={handleBoyOnlyFilter}>boys</button>
+        </div>
+        <div className="filterButtons">
+        {!isAll && <button className="allButton" onClick={handleAllFilter}>all</button>}
+        {isAll && <button className="currentFilterButton" onClick={handleAllFilter}>all</button>}
+        {!isGirlsOnly && <button className="girlOnlyButton" onClick={handleGirlOnlyFilter}>girls</button>}
+        {isGirlsOnly && <button className="currentFilterButton" onClick={handleGirlOnlyFilter}>girls</button>}
+        {!isBoysOnly && <button className="boyOnlyButton" onClick={handleBoyOnlyFilter}>boys</button>}
+        {isBoysOnly && <button className="currentFilterButton" onClick={handleBoyOnlyFilter}>boys</button>}
       </div>
       <div className="favouritesListWrapper">
         <div className="favouritesTextWrapper">
-          <p>Favourites</p>
+          <p>Favourites:</p>
         </div>
         {favouritesList.map((element) => {
           return (
@@ -86,9 +94,9 @@ export const MainContent = (): JSX.Element => {
           setFavouritesList={setFavouritesList}
           clickedButton={clickedButton}
           setClickedButton={setClickedButton}
-          isGirlsOnly={girlOnlyButton}
-          isBoysOnly={boyOnlyButton}
-          isAll={allButton}
+          isGirlsOnly={isGirlsOnly}
+          isBoysOnly={isBoysOnly}
+          isAll={isAll}
         />
       </div>
     </>
