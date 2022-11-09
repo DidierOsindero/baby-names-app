@@ -27,29 +27,34 @@ export const BabyNames = ({
   setClickedButton,
   isGirlsOnly,
   isBoysOnly,
-  isAll
+  isAll,
 }: BabyNamesProps): JSX.Element => {
   return (
     <>
       <ul className="nameList">
         {babyNameArray
-          .filter((element) => 
-            {
-              const isMatchingSearch = element.name.toLowerCase().includes(currentSearchText.toLocaleLowerCase()); 
-              const isNotInFavourites = favouritesList.findIndex(item => JSON.stringify(item) === JSON.stringify(element)) === -1;
-              const isBoyName = element.sex === 'm';
-              const isGirlName = element.sex === 'f';
+          .filter(
+            (element) => {
+              const isMatchingSearch = element.name
+                .toLowerCase()
+                .includes(currentSearchText.toLocaleLowerCase());
+              const isNotInFavourites =
+                favouritesList.findIndex(
+                  (item) => JSON.stringify(item) === JSON.stringify(element)
+                ) === -1;
+              const isBoyName = element.sex === "m";
+              const isGirlName = element.sex === "f";
 
               if (isBoysOnly) {
-              return isMatchingSearch && isNotInFavourites && isBoyName;
+                return isMatchingSearch && isNotInFavourites && isBoyName;
               } else if (isGirlsOnly) {
                 return isMatchingSearch && isNotInFavourites && isGirlName;
               } else {
                 return isMatchingSearch && isNotInFavourites;
               }
             }
-              //if this returns a number >= 0 then that element is in favourites
-              //filter out items which are in the favourites list - must pass condition NOT IN FAVOURITES LIST
+            //if this returns a number >= 0 then that element is in favourites
+            //filter out items which are in the favourites list - must pass condition NOT IN FAVOURITES LIST
           )
           .map((element) => {
             return (

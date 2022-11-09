@@ -17,19 +17,19 @@ export const MainContent = (): JSX.Element => {
     setisAll(true);
     setisBoysOnly(false);
     setisGirlsOnly(false);
-  }
+  };
 
   const handleBoyOnlyFilter = () => {
     setisAll(false);
     setisBoysOnly(true);
     setisGirlsOnly(false);
-  }
+  };
 
   const handleGirlOnlyFilter = () => {
     setisAll(false);
     setisBoysOnly(false);
     setisGirlsOnly(true);
-  }
+  };
 
   //Sort baby names array into alphabetical order
   const babyNameArray = babyNamesData.sort((a, b) => {
@@ -56,14 +56,41 @@ export const MainContent = (): JSX.Element => {
           value={searchText}
           onChange={(event) => setSearchText(event.target.value)}
         />
-        </div>
-        <div className="filterButtons">
-        {!isAll && <button className="allButton" onClick={handleAllFilter}>all</button>}
-        {isAll && <button className="currentFilterButton" onClick={handleAllFilter}>all</button>}
-        {!isGirlsOnly && <button className="girlOnlyButton" onClick={handleGirlOnlyFilter}>girls</button>}
-        {isGirlsOnly && <button className="currentFilterButton" onClick={handleGirlOnlyFilter}>girls</button>}
-        {!isBoysOnly && <button className="boyOnlyButton" onClick={handleBoyOnlyFilter}>boys</button>}
-        {isBoysOnly && <button className="currentFilterButton" onClick={handleBoyOnlyFilter}>boys</button>}
+      </div>
+      <div className="filterButtons">
+        {!isAll && (
+          <button className="allButton" onClick={handleAllFilter}>
+            all
+          </button>
+        )}
+        {isAll && (
+          <button className="currentFilterButton" onClick={handleAllFilter}>
+            all
+          </button>
+        )}
+        {!isGirlsOnly && (
+          <button className="girlOnlyButton" onClick={handleGirlOnlyFilter}>
+            girls
+          </button>
+        )}
+        {isGirlsOnly && (
+          <button
+            className="currentFilterButton"
+            onClick={handleGirlOnlyFilter}
+          >
+            girls
+          </button>
+        )}
+        {!isBoysOnly && (
+          <button className="boyOnlyButton" onClick={handleBoyOnlyFilter}>
+            boys
+          </button>
+        )}
+        {isBoysOnly && (
+          <button className="currentFilterButton" onClick={handleBoyOnlyFilter}>
+            boys
+          </button>
+        )}
       </div>
       <div className="favouritesListWrapper">
         <div className="favouritesTextWrapper">

@@ -45,7 +45,7 @@ MainContent
 }
 
 .currentFilterButton {
-  color:rgb(85, 12, 12);
+  color: rgb(85, 12, 12);
   border-bottom: 2px solid rgb(128, 120, 238);
 }
 
@@ -92,12 +92,12 @@ SearchBarWrapper and SearchBar
 }
 
 .girlOnlyButton {
-    background-color: lightpink;
+  background-color: lightpink;
 }
 
 .girlOnlyButton:active {
   background-color: #f72da3;
-    color: white;
+  color: white;
 }
 
 .girlOnlyButton:hover {
