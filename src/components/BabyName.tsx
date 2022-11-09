@@ -1,13 +1,13 @@
-import { NameData } from "./BabyNames";
+import { NameData } from "./MainContent";
 
 export interface BabyNameProps {
   id: number;
   name: string;
   sex: string;
   favouritesList: NameData[];
-  setFavouritesList: (updatedArray: NameData[] | []) => void;
+  setFavouritesList(updatedArray: NameData[] | []): void;
   clickedButton: NameData | undefined;
-  setClickedButton: (newButtonData: NameData) => void;
+  setClickedButton(newButtonData: NameData): void;
 }
 
 export const BabyName = ({

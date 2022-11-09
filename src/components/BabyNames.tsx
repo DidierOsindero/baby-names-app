@@ -1,22 +1,19 @@
 import { BabyName } from "./BabyName";
+import { NameData } from "./MainContent";
 
 interface BabyNamesProps {
   babyNameArray: NameData[];
   currentSearchText: string;
   favouritesList: NameData[];
-  setFavouritesList: (updatedArray: NameData[] | []) => void;
+  setFavouritesList(updatedArray: NameData[] | []): void;
   clickedButton: NameData | undefined;
-  setClickedButton: (newButtonData: NameData) => void;
+  setClickedButton(newButtonData: NameData): void;
   isGirlsOnly: boolean;
   isBoysOnly: boolean;
   isAll: boolean;
 }
 
-export interface NameData {
-  id: number;
-  name: string;
-  sex: string;
-}
+
 
 export const BabyNames = ({
   babyNameArray,

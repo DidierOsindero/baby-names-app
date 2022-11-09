@@ -1,10 +1,17 @@
 import babyNamesData from "../babyNamesData.json";
 import { useState } from "react";
 import { BabyName } from "./BabyName";
-import { NameData } from "./BabyNames";
 import { BabyNames } from "./BabyNames";
 
+export interface NameData {
+  id: number;
+  name: string;
+  sex: string;
+}
+
 export const MainContent = (): JSX.Element => {
+
+  //S T A T E S
   const [searchText, setSearchText] = useState("");
   const [favouritesList, setFavouritesList] = useState<NameData[]>([]);
   const [clickedButton, setClickedButton] = useState<NameData>();
@@ -13,6 +20,7 @@ export const MainContent = (): JSX.Element => {
   const [isGirlsOnly, setisGirlsOnly] = useState<boolean>(false);
   const [isBoysOnly, setisBoysOnly] = useState<boolean>(false);
 
+    //H A N D L E R - F U N C T I O N S
   const handleAllFilter = () => {
     setisAll(true);
     setisBoysOnly(false);
