@@ -2,6 +2,7 @@ import babyNamesData from "../babyNamesData.json";
 import { useState } from "react";
 import { BabyName } from "./BabyName";
 import { BabyNames } from "./BabyNames";
+import { sortByName } from "../utils/sortByName";
 
 export interface NameData {
   id: number;
@@ -38,20 +39,10 @@ export const MainContent = (): JSX.Element => {
     setisGirlsOnly(true);
   };
 
-  //Sort baby names array into alphabetical order
-  const babyNameArray = babyNamesData.sort((a, b) => {
-    const name1 = a.name;
-    const name2 = b.name;
+  //S O R T - D A T A
+  const babyNameArray = sortByName(babyNamesData);
 
-    if (name1 > name2) {
-      return 1;
-    } else if (name1 < name2) {
-      return -1;
-    } else {
-      return 0;
-    }
-  });
-
+  //M A I N _ C O N T E N T - R E T U R N 
   return (
     <>
       <div className="titleWrapper">
