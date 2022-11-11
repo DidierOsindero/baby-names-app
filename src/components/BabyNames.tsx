@@ -13,8 +13,6 @@ interface BabyNamesProps {
   isAll: boolean;
 }
 
-
-
 export const BabyNames = ({
   babyNameArray,
   currentSearchText,

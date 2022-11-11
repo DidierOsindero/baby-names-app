@@ -10,7 +10,6 @@ export interface NameData {
 }
 
 export const MainContent = (): JSX.Element => {
-
   //S T A T E S
   const [searchText, setSearchText] = useState("");
   const [favouritesList, setFavouritesList] = useState<NameData[]>([]);
@@ -20,7 +19,7 @@ export const MainContent = (): JSX.Element => {
   const [isGirlsOnly, setisGirlsOnly] = useState<boolean>(false);
   const [isBoysOnly, setisBoysOnly] = useState<boolean>(false);
 
-    //H A N D L E R - F U N C T I O N S
+  //H A N D L E R - F U N C T I O N S
   const handleAllFilter = () => {
     setisAll(true);
     setisBoysOnly(false);
