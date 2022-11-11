@@ -14,7 +14,6 @@ export const MainContent = (): JSX.Element => {
   //S T A T E S
   const [searchText, setSearchText] = useState("");
   const [favouritesList, setFavouritesList] = useState<NameData[]>([]);
-  const [clickedButton, setClickedButton] = useState<NameData>();
 
   const [isAll, setisAll] = useState<boolean>(true);
   const [isGirlsOnly, setisGirlsOnly] = useState<boolean>(false);
@@ -103,8 +102,6 @@ export const MainContent = (): JSX.Element => {
                 sex={element.sex}
                 favouritesList={favouritesList}
                 setFavouritesList={setFavouritesList}
-                clickedButton={clickedButton}
-                setClickedButton={setClickedButton}
               />
             </li>
           );
@@ -117,8 +114,6 @@ export const MainContent = (): JSX.Element => {
           currentSearchText={searchText}
           favouritesList={favouritesList}
           setFavouritesList={setFavouritesList}
-          clickedButton={clickedButton}
-          setClickedButton={setClickedButton}
           isGirlsOnly={isGirlsOnly}
           isBoysOnly={isBoysOnly}
           isAll={isAll}

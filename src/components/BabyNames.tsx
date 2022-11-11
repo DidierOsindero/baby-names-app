@@ -6,8 +6,6 @@ interface BabyNamesProps {
   currentSearchText: string;
   favouritesList: NameData[];
   setFavouritesList(updatedArray: NameData[] | []): void;
-  clickedButton: NameData | undefined;
-  setClickedButton(newButtonData: NameData): void;
   isGirlsOnly: boolean;
   isBoysOnly: boolean;
   isAll: boolean;
@@ -18,8 +16,6 @@ export const BabyNames = ({
   currentSearchText,
   favouritesList,
   setFavouritesList,
-  clickedButton,
-  setClickedButton,
   isGirlsOnly,
   isBoysOnly,
   isAll,
@@ -60,8 +56,6 @@ export const BabyNames = ({
                   sex={element.sex}
                   favouritesList={favouritesList}
                   setFavouritesList={setFavouritesList}
-                  clickedButton={clickedButton}
-                  setClickedButton={setClickedButton}
                 />
               </li>
             );

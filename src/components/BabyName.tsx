@@ -6,8 +6,6 @@ export interface BabyNameProps {
   sex: string;
   favouritesList: NameData[];
   setFavouritesList(updatedArray: NameData[] | []): void;
-  clickedButton: NameData | undefined;
-  setClickedButton(newButtonData: NameData): void;
 }
 
 export const BabyName = ({
@@ -16,8 +14,6 @@ export const BabyName = ({
   sex,
   favouritesList,
   setFavouritesList,
-  clickedButton,
-  setClickedButton,
 }: BabyNameProps): JSX.Element => {
   const handleNameButtonClick = () => {
     const currentButton = { id: id, name: name, sex: sex };
@@ -35,7 +31,6 @@ export const BabyName = ({
         )
       );
     }
-    setClickedButton(currentButton);
   };
 
   return (
