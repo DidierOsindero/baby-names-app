@@ -73,39 +73,30 @@ export const MainContent = (): JSX.Element => {
         />
       </div>
       <div className="filterButtons">
-        {!isAll && (
-          <button className="allButton" onClick={handleAllFilter}>
-            all
-          </button>
-        )}
-        {isAll && (
-          <button className="currentFilterButton" onClick={handleAllFilter}>
-            all
-          </button>
-        )}
-        {!isGirlsOnly && (
-          <button className="girlOnlyButton" onClick={handleGirlOnlyFilter}>
-            girls
-          </button>
-        )}
-        {isGirlsOnly && (
+        {
           <button
-            className="currentFilterButton"
+            className={isAll ? "currentFilterButton" : "allButton"}
+            onClick={handleAllFilter}
+          >
+            all
+          </button>
+        }
+        {
+          <button
+            className={isGirlsOnly ? "currentFilterButton" : "girlOnlyButton"}
             onClick={handleGirlOnlyFilter}
           >
             girls
           </button>
-        )}
-        {!isBoysOnly && (
-          <button className="boyOnlyButton" onClick={handleBoyOnlyFilter}>
+        }
+        {
+          <button
+            className={isBoysOnly ? "currentFilterButton" : "boyOnlyButton"}
+            onClick={handleBoyOnlyFilter}
+          >
             boys
           </button>
-        )}
-        {isBoysOnly && (
-          <button className="currentFilterButton" onClick={handleBoyOnlyFilter}>
-            boys
-          </button>
-        )}
+        }
       </div>
       <div className="favouritesListWrapper">
         <div className="favouritesTextWrapper">

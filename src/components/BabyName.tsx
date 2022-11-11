@@ -17,22 +17,14 @@ export const BabyName = ({
 
   return (
     <div className="BabyName">
-      {sex === "m" && (
+      {
         <button
-          className="boyNameButton"
+          className={sex === "m" ? "boyNameButton" : "girlNameButton"}
           onClick={() => handleNameButtonClick(currentButton)}
         >
           {name}
         </button>
-      )}
-      {sex === "f" && (
-        <button
-          className="girlNameButton"
-          onClick={() => handleNameButtonClick(currentButton)}
-        >
-          {name}
-        </button>
-      )}
+      }
     </div>
   );
 };
