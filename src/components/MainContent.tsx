@@ -38,6 +38,23 @@ export const MainContent = (): JSX.Element => {
     setisGirlsOnly(true);
   };
 
+  const handleNameButtonClick = (currentButton: NameData) => {
+    //creating a condition to check if button is already in favourites list
+    if (
+      favouritesList.findIndex(
+        (el) => el.id === currentButton.id
+      ) === -1
+    ) {
+      setFavouritesList([...favouritesList, { id: currentButton.id, name: currentButton.name, sex: currentButton.sex }]); //add name that was clicked from babynames data
+    } else {
+      setFavouritesList(
+        favouritesList.filter(
+          (el) => el.id !== currentButton.id
+        )
+      );
+    }
+  };
+
   //S O R T - D A T A
   const babyNameArray = sortByName(babyNamesData);
 
@@ -100,8 +117,7 @@ export const MainContent = (): JSX.Element => {
                 id={element.id}
                 name={element.name}
                 sex={element.sex}
-                favouritesList={favouritesList}
-                setFavouritesList={setFavouritesList}
+                handleNameButtonClick={handleNameButtonClick}
               />
             </li>
           );
@@ -114,6 +130,7 @@ export const MainContent = (): JSX.Element => {
           currentSearchText={searchText}
           favouritesList={favouritesList}
           setFavouritesList={setFavouritesList}
+          handleNameButtonClick={handleNameButtonClick}
           isGirlsOnly={isGirlsOnly}
           isBoysOnly={isBoysOnly}
           isAll={isAll}

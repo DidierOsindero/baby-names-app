@@ -6,6 +6,7 @@ interface BabyNamesProps {
   currentSearchText: string;
   favouritesList: NameData[];
   setFavouritesList(updatedArray: NameData[] | []): void;
+  handleNameButtonClick: (nameData: NameData) => void;
   isGirlsOnly: boolean;
   isBoysOnly: boolean;
   isAll: boolean;
@@ -16,10 +17,12 @@ export const BabyNames = ({
   currentSearchText,
   favouritesList,
   setFavouritesList,
+  handleNameButtonClick,
   isGirlsOnly,
   isBoysOnly,
   isAll,
 }: BabyNamesProps): JSX.Element => {
+
   return (
     <>
       <ul className="nameList">
@@ -54,8 +57,7 @@ export const BabyNames = ({
                   id={element.id}
                   name={element.name}
                   sex={element.sex}
-                  favouritesList={favouritesList}
-                  setFavouritesList={setFavouritesList}
+                  handleNameButtonClick={handleNameButtonClick}
                 />
               </li>
             );
