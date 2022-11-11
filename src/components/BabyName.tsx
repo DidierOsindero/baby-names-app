@@ -24,14 +24,14 @@ export const BabyName = ({
     //creating a condition to check if button is already in favourites list
     if (
       favouritesList.findIndex(
-        (el) => JSON.stringify(el) === JSON.stringify(currentButton)
+        (el) => el.id === currentButton.id
       ) === -1
     ) {
       setFavouritesList([...favouritesList, { id: id, name: name, sex: sex }]); //add name that was clicked from babynames data
     } else {
       setFavouritesList(
         favouritesList.filter(
-          (el) => JSON.stringify(el) !== JSON.stringify(currentButton)
+          (el) => el.id !== currentButton.id
         )
       );
     }

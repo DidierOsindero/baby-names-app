@@ -35,7 +35,7 @@ export const BabyNames = ({
                 .includes(currentSearchText.toLocaleLowerCase());
               const isNotInFavourites =
                 favouritesList.findIndex(
-                  (item) => JSON.stringify(item) === JSON.stringify(element)
+                  (item) => item.id === element.id
                 ) === -1;
               const isBoyName = element.sex === "m";
               const isGirlName = element.sex === "f";
