@@ -22,7 +22,6 @@ export const BabyNames = ({
   isBoysOnly,
   isAll,
 }: BabyNamesProps): JSX.Element => {
-
   return (
     <>
       <ul className="nameList">
@@ -33,9 +32,8 @@ export const BabyNames = ({
                 .toLowerCase()
                 .includes(currentSearchText.toLocaleLowerCase());
               const isNotInFavourites =
-                favouritesList.findIndex(
-                  (item) => item.id === element.id
-                ) === -1;
+                favouritesList.findIndex((item) => item.id === element.id) ===
+                -1;
               const isBoyName = element.sex === "m";
               const isGirlName = element.sex === "f";
 

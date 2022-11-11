@@ -11,19 +11,25 @@ export const BabyName = ({
   id,
   name,
   sex,
-  handleNameButtonClick
+  handleNameButtonClick,
 }: BabyNameProps): JSX.Element => {
-  const currentButton = {id: id, name: name, sex: sex}
+  const currentButton = { id: id, name: name, sex: sex };
 
   return (
     <div className="BabyName">
       {sex === "m" && (
-        <button className="boyNameButton" onClick={() => handleNameButtonClick(currentButton)}>
+        <button
+          className="boyNameButton"
+          onClick={() => handleNameButtonClick(currentButton)}
+        >
           {name}
         </button>
       )}
       {sex === "f" && (
-        <button className="girlNameButton" onClick={() => handleNameButtonClick(currentButton)}>
+        <button
+          className="girlNameButton"
+          onClick={() => handleNameButtonClick(currentButton)}
+        >
           {name}
         </button>
       )}

@@ -40,17 +40,18 @@ export const MainContent = (): JSX.Element => {
 
   const handleNameButtonClick = (currentButton: NameData) => {
     //creating a condition to check if button is already in favourites list
-    if (
-      favouritesList.findIndex(
-        (el) => el.id === currentButton.id
-      ) === -1
-    ) {
-      setFavouritesList([...favouritesList, { id: currentButton.id, name: currentButton.name, sex: currentButton.sex }]); //add name that was clicked from babynames data
+    if (favouritesList.findIndex((el) => el.id === currentButton.id) === -1) {
+      setFavouritesList([
+        ...favouritesList,
+        {
+          id: currentButton.id,
+          name: currentButton.name,
+          sex: currentButton.sex,
+        },
+      ]); //add name that was clicked from babynames data
     } else {
       setFavouritesList(
-        favouritesList.filter(
-          (el) => el.id !== currentButton.id
-        )
+        favouritesList.filter((el) => el.id !== currentButton.id)
       );
     }
   };
@@ -58,7 +59,7 @@ export const MainContent = (): JSX.Element => {
   //S O R T - D A T A
   const babyNameArray = sortByName(babyNamesData);
 
-  //M A I N _ C O N T E N T - R E T U R N 
+  //M A I N _ C O N T E N T - R E T U R N
   return (
     <>
       <div className="titleWrapper">
